@@ -2,13 +2,13 @@ import * as Phaser from 'phaser';
 import Scenes from './scenes';
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
-  title: 'Sample',
+  title: 'Mandic Game',
 
   type: Phaser.AUTO,
 
   scale: {
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 800,
+    height: 600,
   },
 
   scene: Scenes,
@@ -22,10 +22,24 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
 
   parent: 'game',
   backgroundColor: '#000000',
+
+  fps: { min: 60, panicMax: 120 },
+
 };
 
-export const game = new Phaser.Game(gameConfig);
+export class Game extends Phaser.Game {
 
-window.addEventListener('resize', () => {
-  game.scale.refresh();
-});
+  constructor() {
+
+    super(gameConfig);
+  }
+
+}
+
+const game = new Game();
+
+// export const game = new Phaser.Game(gameConfig);
+
+// window.addEventListener('resize', () => {
+//   game.scale.refresh();
+// });

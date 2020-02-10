@@ -15,14 +15,20 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   public create() {
-    this.add.text(100, 50, 'This is a sample main menu. Click the "Start" button below to run your game.', { fill: '#FFFFFF' }).setFontSize(24);
+    this.add.text(100, 50, 'MANDIC Game', { fill: '#FFFFFF' }).setFontSize(24);
 
+    // tslint:disable-next-line: no-unused-expression
     new MenuButton(this, 100, 150, 'Start Game', () => {
       this.scene.start('Game');
     });
 
-    new MenuButton(this, 100, 250, 'Settings', () => console.log('settings button clicked'));
+    // tslint:disable-next-line: no-unused-expression
+    new MenuButton(this, 100, 250, 'Choose Char', () => {
+      this.scene.start('ChooseChar');
+    });
 
+
+    // tslint:disable-next-line: no-unused-expression
     new MenuButton(this, 100, 350, 'Help', () => console.log('help button clicked'));
   }
 }

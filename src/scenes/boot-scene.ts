@@ -46,10 +46,12 @@ export class BootScene extends Phaser.Scene {
       progressBar.destroy();
       progressBarContainer.destroy();
 
-      this.scene.start('MainMenu');
+      // this.scene.start('MainMenu');
+      this.scene.start('ChooseChar');
     });
 
     this.loadAssets();
+
   }
 
   /**
@@ -62,6 +64,7 @@ export class BootScene extends Phaser.Scene {
 
     // Source: Open Game Art
     this.load.image('man', 'assets/character.png');
+    this.load.spritesheet('chars', 'assets/chars.png', { frameWidth: 100, frameHeight: 125, startFrame: 0, endFrame: 9 });
   }
 
 }
