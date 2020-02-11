@@ -19,11 +19,11 @@ export class ChooseCharScene extends Phaser.Scene {
         super(sceneConfig);
     }
 
-    public create() {
+    public create() {      
         this.add.text(150, 150, 'Escolha seu personagem', { fill: '#FFFFFF' }).setFontSize(24);
 
         this.returnButton = new MenuButton(this, 10, 50, 'Voltar', () => {
-            this.scene.start('MainMenu');
+            this.scene.start('MainMenu', {value: 'voltou'});
         });
 
         this.sprite1 = this.add.sprite(200, 300, 'chars', 0);
@@ -39,12 +39,12 @@ export class ChooseCharScene extends Phaser.Scene {
 
         this.sprite1.setInteractive({ useHandCursor: true })
         this.sprite1.on('pointerover', (event: Phaser.Input.Pointer) => {
-            console.log('hover in');
-            console.log(event);
-            console.log(this.sprite1.state);
+            // console.log('hover in');
+            // console.log(event);
+            // console.log(this.sprite1.state);
         });
         this.sprite1.on('pointerout', () => {
-            console.log('hover out');
+            // console.log('hover out');
 
         });
         this.sprite1.on('pointerdown', (event: Phaser.Input.Pointer) => {
