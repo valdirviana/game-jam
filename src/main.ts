@@ -30,10 +30,8 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
 export class Game extends Phaser.Game {
 
   constructor() {
-
     super(gameConfig);
   }
-
 }
 
 const game = new Game();
